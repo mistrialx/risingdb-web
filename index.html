@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Destiny: Rising Database</title>
+<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#0a0c10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Rising DB">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+<header id="top">
+  <a id="brand" href="#home" aria-label="Home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 8l6.5 3.8v7.4L16 23l-6.5-3.8v-7.4z" fill="currentColor"/></svg>
+    <span>RISING<b>DB</b></span>
+  </a>
+  <nav id="nav"></nav>
+  <label id="searchbox">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="global" type="search" placeholder="Search everything" autocomplete="off" spellcheck="false">
+    <kbd>/</kbd>
+  </label>
+</header>
+
+<nav id="tabs" hidden></nav>
+
+<main id="home" hidden>
+  <section class="hero">
+    <p class="eyebrow">Unofficial fan wiki and toolkit</p>
+    <h1>Everything in<br><em>Destiny: Rising</em></h1>
+    <p class="lede" id="lede"></p>
+  </section>
+  <section>
+    <h2 class="rule">Lightbearers</h2>
+    <div id="roster" class="roster"></div>
+  </section>
+  <section>
+    <h2 class="rule">Tools</h2>
+    <div id="toolcards" class="sections"></div>
+  </section>
+  <section>
+    <h2 class="rule">Wiki</h2>
+    <div id="sections" class="sections"></div>
+  </section>
+</main>
+
+<main id="browse" hidden>
+  <div id="toolbar">
+    <div class="heading">
+      <h1 id="title"></h1>
+      <span id="count"></span>
+    </div>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Filter…" autocomplete="off" spellcheck="false">
+      <select id="sort" class="pick" aria-label="Sort">
+        <option value="">Sort: game order</option>
+        <option value="name">Sort: name A–Z</option>
+        <option value="rarity">Sort: rarity, highest first</option>
+      </select>
+    </div>
+    <div id="filters"></div>
+  </div>
+  <div id="grid"></div>
+  <div id="sentinel"></div>
+</main>
+
+<main id="tool" hidden></main>
+
+<div id="scrim" hidden></div>
+<aside id="detail" hidden aria-live="polite"></aside>
+
+<footer id="foot"></footer>
+<script src="data/index.js"></script>
+<script src="data/icons.js"></script>
+<script src="tools.js"></script>
+<script src="app.js"></script>
+<script>if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register("sw.js");</script>
+</body>
+</html>
